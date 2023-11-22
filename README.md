@@ -1,5 +1,7 @@
 
-#🛸🛸r2d2🛸🛸 home helper bot
+#🛸🛸R2D2🛸🛸 home helper bot
+opensource soft
+
 
 To start:
 Write Telegram bot token from BotFather in config.py.
