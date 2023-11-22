@@ -7,26 +7,16 @@ def connect():
     try:
         global base
         base = sqlite3.connect(config.BASE_PATH)
-        util.write_log("Найден файл ДБ shop.dll ")
+        util.write_log("Найден файл ДБ session.dll ")
         return base
     except:
-        util.time("Не найден файл ДБ shop.dll ")
+        util.time("Не найден файл ДБ session.dll ")
 
 
 
 def create_tables(base):
     try:
         con = base.cursor()
-        con.execute(
-            '''CREATE TABLE IF NOT EXISTS goods
-                        (id INTEGER PRIMARY KEY AUTOINCREMENT, 
-                        Code INTEGER,
-                        Name TEXT,
-                        Price INTEGER,
-                        Description TEXT,
-                        AddDate NUMERIC
-                        )'''
-                    )
         con.execute(
             '''CREATE TABLE IF NOT EXISTS users
                         (id INTEGER PRIMARY KEY AUTOINCREMENT, 
@@ -40,7 +30,7 @@ def create_tables(base):
         base.commit()
         util.write_log("Создана таблица users")
     except:
-        util.write_bug("Ошибка создания Таблиц")
+        util.write_bug("Ошибка создания таблицы users")
 
 def add_user(base, id, name, username, role, date):
     try:
@@ -49,28 +39,7 @@ def add_user(base, id, name, username, role, date):
             (id, name, username, role, date)
         )
         base.commit()
-        util.write_log("Добавлен администратор")
+        util.write_log("Добавлена запись о сессии")
     except:
-        util.write_bug("Ошибка добавления администратора")
+        util.write_bug("Ошибка добавления записи о сессии")
 
-def update_goods(base, num, name, cost, descr, date):
-    try:
-        base.cursor().execute(
-            '''INSERT INTO goods(Code, Name, Price, Description, AddData) VALUES (?,?,?,?,?)''',
-            (num, name, cost, descr, date)
-        )
-        base.commit()
-        util.write_log("Добавлен товар "+str(name))
-    except:
-        util.write_bug("Ошибка добавления товара "+str(name))
-
-def update_catalog(base, num, price):
-    try:
-        base.cursor().execute(
-            '''INSERT INTO catalog(GoodNumber, Price) VALUES (?,?)''',
-            (num, price)
-        )
-        base.commit()
-        util.write_log("Добавлен администратор")
-    except:
-        util.write_bug("Ошибка добавления администратора")
