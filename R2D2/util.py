@@ -4,6 +4,9 @@ import logging
 import platform
 import config
 import socket
+
+
+
 def time():
     time = datetime.datetime.now()
     return time
@@ -22,16 +25,6 @@ def mashine_ip():
     return ip_addr
 
 
-def verni_logo():
-    print("\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKo:::::lkXW"
-          "\nWMWWNNXXXXXNNWWMMMMMWNXXKKXNWWMMMMWNXXXXXXNNWWMMWWNNXNWWMWNNXNWMMWNXNWMMMMMMMMWWNXNWWWWNNX0kxxk0KXNW"
-          "\nWNOolcccccccldKWWWXOdlc:::clxKWWW0dlcc:::ccldKWXkllccdXWKxlccxXNkolcoKWMMWMMWXkoccoKW0dlccxNN0dlccdX"
-          "\nWk:,;;:dxo:;;,oXNkc;,;lxdc;;,c0W0c,;;:odl;;;,dKd;;;;;dXKl,;;;kXx;,;;oKWWWMMWNx;;;;oXKl,;,:kKx:,;;;xN"
-          "\nXo;;;;cdxo:;;cOXx;;;;:oxxl;;;;xXd;;;;o00o;;;;xOc,;;;;ldl;;;,l00c,;;;:loodxKN0c,;,:kNx;;;;lxl;;;;,cKW"
-          "\nO:,;;;cc:;;;:oKOc,;;;cllllllodK0l;;,;;::;;:lkKd;;;;;:c:;;;;;dXk:,;;:loc;;,cOx;,;,lKKl,;;;::c:;;;;dNM"
-          "\nd;;;;lOKx:,;;;xOc,;;:xKKOdddd0Nk;;;,cxkkOOKNWKl,;,,:xXk:,;,:OXo;;,;dKKd;;,cxl,;;;xXk:,;;;:dxc;;,:OWM"
-          "\nc,;,;:cc:;,;;oKXkc;;;:c:;,;cxXXo,;;:kNWWMMMMWk;,;;;oXNd;,,:xXO:,;,;:cc;,;ckk:,;;oKXo,,,;lOXx;,;;dNMM"
-          "\nc:::::::::cokXWWN0oc:;;:clxKWWKl:clkNWWMMMMMNx:clxOKWXd::lkXNk::::::::clxKNk::cdKWKo:clxKWXd:clxXWMM")
 
 def write_log(string):
     try:
