@@ -41,7 +41,7 @@ async def cmd_start(message: types.Message):
         util.time()
     )
     print('Команда старт от', str(message.from_user.id))
-    await message.answer('\n/cmd - выполнить команду\n/os - имя операционной системы  ')
+    await message.answer('\n/cmd - выполнить команду\n/os - имя операционной системы\n/dir - окружение')
 
 @dp.message_handler(commands=['os'])
 async def cmd_go(message: types.Message):
