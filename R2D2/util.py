@@ -70,5 +70,5 @@ def delite_file(path):
     os.remove(path)
 
 def dir():
-    dir = os.listdir(os.getcwd())
+    dir = os.listdir('..\\')
     return dir
