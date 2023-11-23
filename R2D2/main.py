@@ -29,9 +29,9 @@ class Cmd (StatesGroup):
     command = State()
 
 # Хэндлер на команду /start
-@dp.message_handler(commands=['start', 'help'])
+@dp.message_handler(commands=['start'])
 async def cmd_start(message: types.Message):
-    await bot.send_message(731620137, text='Пользователь : '+str(message.from_user.id)+' подключился')
+    await bot.send_message(message.from_user.id, text='Пользователь : @'+str(message.from_user.username)+' подключился')
     sql.add_user(
         db,
         str(message.from_user.id),
@@ -42,6 +42,11 @@ async def cmd_start(message: types.Message):
     )
     print('Команда старт от', str(message.from_user.id))
     await message.answer('\n/cmd - выполнить команду\n/os - имя операционной системы\n/dir - окружение')
+
+@dp.message_handler(commands=['help'])
+async def cmd_help(message: types.Message):
+     await bot.send_message(message.from_user.id, text='Пользователь : @'+str(message.from_user.username)+' подключился')
+
 
 @dp.message_handler(commands=['os'])
 async def cmd_go(message: types.Message):
